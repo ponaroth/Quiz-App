@@ -1,0 +1,40 @@
+{
+    "questions":[
+        {
+            "id":1, 
+            "question":"The _________ replacement algorithm replaces the block in the set that has been in the cache longest.", 
+            "choices":["tag", "FIFO", "LRU", "None of the above"],
+            "correct": 1
+        },
+        {
+            "id":2, 
+            "question":"With __________ additional hardware is used to ensure that all updates to main memory via cache are reflected in all caches", 
+            "choices":["hardware transparancy", "direct mapping", "execution units", "None of the above"],
+            "correct": 0
+        },
+        {
+            "id":3, 
+            "question":"The simplest technique for logically organizing cache is __________.", 
+            "choices":["direct mapping", "associative", "FIFO", "None of the above"],
+            "correct": 0
+        },
+        {
+            "id":4, 
+            "question":"The __________ cache is slower and typically larger than the L2 cache.", 
+            "choices":["LRU", "L1", "L3", "None of the above"],
+            "correct": 2
+        },
+        {
+            "id":5, 
+            "question":"_________ is a portion of a cache line that is used for addressing purposes.", 
+            "choices":["tag", "block", "LRU", "None of the above"],
+            "correct": 1
+        },
+        {
+            "id":6, 
+            "question":"__________ is easily implemented as a round-robin or circular buffer technique.", 
+            "choices":["LRU", "FIFO", "direct mapping", "None of the above"],
+            "correct": 1
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+<h1>{{header}} <a *ngIf="quizOver">{{score}}/{{totalScore}}</a></h1>
+<div *ngIf="!quizOver">
+  <p ><a *ngIf="qCount">{{qCount}}.</a> {{currentQuestion}}</p>
+
+  <div >
+      <form [formGroup]="form1" (ngSubmit)="updateQuestion()">
+        <input *ngIf="qCount" type="radio" [value]="0" formControlName="choice">{{choiceText1}}
+        <br>
+        <input *ngIf="qCount" type="radio" [value]="1" formControlName="choice">{{choiceText2}}
+        <br>
+        <input *ngIf="qCount" type="radio" [value]="2" formControlName="choice">{{choiceText3}}
+        <br>
+        <input *ngIf="qCount" type="radio" [value]="3" formControlName="choice">{{choiceText4}}
+        <br>
+    
+        <input type="submit" value="{{button1}}" />
+      </form>
+
+  </div>
+
+</div>
+
+<div *ngIf="quizOver">
+  <div *ngFor="let q of questionList">
+    <p><a>{{q.id}}.</a> {{q.question}}</p>
+    <input type="radio" [value]="0" [attr.disabled]="true" [checked]="q.selected == 0? true:false">{{q.choices[0]}}
+    <br>
+    <input type="radio" [value]="1" [attr.disabled]="true" [checked]="q.selected == 1? true:false">{{q.choices[1]}}
+    <br>
+    <input type="radio" [value]="2" [attr.disabled]="true" [checked]="q.selected == 2? true:false">{{q.choices[2]}}
+    <br>
+    <input type="radio" [value]="3" [attr.disabled]="true" [checked]="q.selected == 3? true:false">{{q.choices[3]}}
+    <br>
+    <p>Correct Answer: {{q.choices[q.correct]}}</p>
+  </div>
+</div>
+
+<div *ngIf="quizOver">
+    <button (click)="startOver()">Start Over</button>
+</div>
